@@ -84,12 +84,33 @@ class TestLab1(unittest.TestCase):
         high = len(list_val) - 1
         self.assertEqual(bin_search(7, low, high, list_val), 7)
 
-    def test_bin_serach_7(self):
+    def test_bin_search_7(self):
         """Tests bin search when value is in lower bound"""
         list_val = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         low = 0
         high = len(list_val) - 1
         self.assertEqual(bin_search(2, low, high, list_val), 2)
+
+    def test_bin_search_8(self):
+        """Tests bin search when value cannot be found and None inside if low <= high statement is returned"""
+        list_val = [1, 3, 5]
+        low = 0
+        high = len(list_val) - 1
+        self.assertEqual(bin_search(2, low, high, list_val), None)
+
+    def test_bin_search_9(self):
+        """Tests bin search with a ridiculous amount of indices where target is found"""
+        list_val = list(range(0, 100))
+        low = 0
+        high = len(list_val) - 1
+        self.assertEqual(bin_search(60, low, high, list_val), 60)
+
+    def test_bin_search_10(self):
+        "Tests bin search with a ridiculous amount of indices where target is not found"""
+        list_val = list(range(1, 100, 2))
+        low = 0
+        high = len(list_val) - 1
+        self.assertEqual(bin_search(40, low, high, list_val), None)
 
     def test_bin_search_NONE(self):
         """Tests bin_search with None"""
