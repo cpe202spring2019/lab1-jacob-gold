@@ -23,6 +23,8 @@ def reverse_rec(int_list):   # must use recursion
    
    if int_list == None:
       raise ValueError
+   if len(int_list) == 0:
+       return []
    else:
       if len(int_list) != 0:
          appendValue = int_list.pop(0)
@@ -40,7 +42,7 @@ def bin_search(target, low, high, int_list):  # must use recursion
    if int_list == None:
       raise ValueError
    if int_list == []:
-      return None
+      return []
    if low <= high:
       mid = (high+low)//2
       if target == int_list[mid]:

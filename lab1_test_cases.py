@@ -68,7 +68,7 @@ class TestLab1(unittest.TestCase):
         
     def test_reverse_rec_EMPTY(self):
         """Tests reverse_rec with empty list"""   
-        self.assertEqual(reverse_rec([]), None)
+        self.assertEqual(reverse_rec([]), [])
 
     def test_reverse_rec_NONE(self):
         """Tests reverse_rec with None"""
@@ -184,7 +184,7 @@ class TestLab1(unittest.TestCase):
     def test_bin_search_EMPTY(self):
         """Tests bin_search with empty list"""
         tlist = []
-        self.assertEqual(bin_search(4, 0, len(tlist)-1, tlist), None)
+        self.assertEqual(bin_search(4, 0, len(tlist)-1, tlist), [])
 
 if __name__ == "__main__":
         unittest.main()
