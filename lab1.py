@@ -11,7 +11,9 @@ def max_list_iter(int_list):  # must use iteration not recursion
          return None
       else: 
          for i in int_list: #checks every value in int_list
-            if i >= max_val: #checks if i is greater or equal to max_val in case of duplicates
+            if type(i) != int and type(i) != float:
+                continue
+            if i > max_val: #checks if i is greater or equal to max_val in case of duplicates
                max_val = i #sets max_val equal to i
          return max_val
 
@@ -46,7 +48,7 @@ def bin_search(target, low, high, int_list):  # must use recursion
       elif target < int_list[mid]:
          high = mid - 1
          return bin_search(target, low, high, int_list)
-      else:
+      elif target > int_list[mid]:
          low = mid + 1
          return bin_search(target, low, high, int_list)
       
